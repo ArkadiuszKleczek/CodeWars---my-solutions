@@ -5,25 +5,17 @@ Get the Middle Character
 *
 * */
 
-
 function getMiddle(s) {
-    let x = s.split('');  //s to array
-    console.log(x);
-    let length = x.length;
-    console.log(length);
+    let sArray = s.split('');  //s to array
+    let length = sArray.length/2; //middle of array
     let spliceStart = 0;
     let spliceEnd = 1;
-    if (length % 2 !== 0) {
-        spliceStart = Math.floor(length/2);
-
+    if (sArray.length % 2 !== 0) {   //is middle of array an odd number?
+        spliceStart = Math.floor(length); //yes so round it down and splice only 1
     } else  {
-        spliceStart = (length/2)-1;
-        spliceEnd++;
-    }
-
-    console.log(spliceStart, spliceEnd);
-    let splicedArray = x.splice(spliceStart, spliceEnd);
-    console.log(splicedArray);
-    return splicedArray.join('')
+        spliceStart = length-1; //no, so we move it to 1st of 2 even pair
+        spliceEnd++;            //will splice 2 middle numbers
+    };
+    return splicedArray = (sArray.splice(spliceStart, spliceEnd)).join(''); //splice and make it string
 }
 
