@@ -4,11 +4,16 @@
 * */
 
 function solution(number){
-    let holder =[];
-    for (let i = number-1; i > 0; i--){
-        if (i % 3 === 0 || i % 5 === 0) {
-            holder.push(i);
-        }
-    }
-    return holder.reduce((sum, n) => sum +=n);
-}
+  let holder =[];
+  for (let i = number-1; i > 0; i--){
+     if (i % 3 === 0 || i % 5 === 0) {
+       holder.push(i);
+     }
+  }
+    if (holder.length === 0) {
+      return 0;
+    }  else {
+     return holder.reduce((sum, n) => sum +=n);
+    } 
+ }   
+
