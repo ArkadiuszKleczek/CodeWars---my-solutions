@@ -1,1 +1,1 @@
-:shipit: # My CodeWars account: https://www.codewars.com/users/skip1337 :shipit:
+ # My CodeWars account: https://www.codewars.com/users/skip1337 :shipit:
