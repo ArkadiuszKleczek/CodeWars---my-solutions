@@ -1,6 +1,6 @@
 /*
 *   6 kyu Length of missing array
-*
+*   https://www.codewars.com/kata/57b6f5aadb5b3d0ae3000611
 * */
 
 const getLengthOfMissingArray = arrayOfArrays => {
@@ -9,7 +9,6 @@ const getLengthOfMissingArray = arrayOfArrays => {
         return 0
     }
     let result;
-    let sorted2 = arrayOfArrays.sort((a, b) => a.length - b.length);
     const sorted = arrayOfArrays.map(ele => ele.length).sort((a, b) => a - b);
     console.log(sorted)
     for (let i = 0; i < sorted.length; i++) {
