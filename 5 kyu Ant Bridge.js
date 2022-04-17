@@ -1,6 +1,6 @@
 /*
 *   5 kyu Ant Bridge
-*
+*   https://www.codewars.com/kata/599385ae6ca73b71b8000038
 * */
 
 const antBridge = (ants, terrain) => {
