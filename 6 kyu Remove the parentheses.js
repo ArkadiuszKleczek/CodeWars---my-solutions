@@ -3,13 +3,16 @@
 *   https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8
 * */
 
-function removeParentheses(s){
-    let r = 0
-    let x = ''
-    for (let c of s) {
-        if (c=='(') r++
-        if (r==0) x+=c
-        if (c==')') r--
+const removeParentheses = s => {
+  const arr = s.split('');
+  let deep = 0;
+  const result =  arr.reduce((res, item) => {
+    if (item === '(') deep++;
+    if (!deep) {
+      return res += item;
     }
-    return x
+    if (item === ')') deep--;
+    return res;
+  }, '');
+  return result;
 }
