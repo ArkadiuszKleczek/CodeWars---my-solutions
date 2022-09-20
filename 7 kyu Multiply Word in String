@@ -1,0 +1,17 @@
+/*
+*   7 kyu Multiply Word in String
+*   https://www.codewars.com/kata/5ace2d9f307eb29430000092
+* */
+
+function modifyMultiply (str,loc,num) {
+ let strWords = str.split(' ');
+  let word = strWords[loc];
+  let result = word;
+  console.log(strWords, word);
+
+  for (let i = 1; i < num; i++){
+    result += '-' + word;
+  }
+  console.log(result)
+  return result;
+} 
