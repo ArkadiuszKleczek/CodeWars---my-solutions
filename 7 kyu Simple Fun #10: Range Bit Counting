@@ -1,0 +1,16 @@
+/*
+*   7 kyu Simple Fun #10: Range Bit Counting
+*   https://www.codewars.com/kata/58845748bd5733f1b300001f
+* */
+
+const rangeBitCount = (a, b) => {
+ const rangeArr = [];
+  for (let i = a; i <= b; i++) {
+    rangeArr.push(i);
+  }  
+  const binaryArr = rangeArr.map(num => num.toString(2));
+  const splitedBinaryArr = binaryArr.map( num => num.split(''));
+  const splitedBinaryArrSum = splitedBinaryArr.map(num => num.map(Number).reduce((a, b) => a + b));
+  const result = splitedBinaryArrSum.reduce((a, b) => a + b);
+  return result;
+}
