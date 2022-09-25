@@ -1,0 +1,16 @@
+/*
+*   7 kyu Playing Cards Draw Order – Part 1
+*   https://www.codewars.com/kata/630647be37f67000363dff04
+* */
+
+const draw = (deck) => {
+const drawnCards = [];
+  for (let i = 0; i < deck.length; i++) {
+    if (i % 2 === 0 ) {
+      drawnCards.push(deck[i]);
+    } else {
+      deck.push(deck[i]);
+    }
+  } 
+  return drawnCards;
+};
