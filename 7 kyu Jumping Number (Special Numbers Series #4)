@@ -1,0 +1,21 @@
+/*
+*  7 kyu Jumping Number (Special Numbers Series #4)
+*  https://www.codewars.com/kata/5a54e796b3bfa8932c0000ed
+* */
+
+
+const jumpingNumber = n => {
+  if (n < 10) return "Jumping!!";
+  const nArr = n.toString().split('');
+  const result = []; 
+  for (let i = 0; i < nArr.length-1; i++){
+    if (nArr[i] - nArr[i+1] == 1 || nArr[i] - nArr[i+1] == -1) {
+      result.push(0);
+    } else {
+      result.push(1)
+    }   
+  }; 
+  let x =  result.reduce((a, b) => a + b)
+  console.log(n, nArr, result, x);
+  return x === 0 ? "Jumping!!" : "Not!!"
+}
