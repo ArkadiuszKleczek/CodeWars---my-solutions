@@ -1,0 +1,11 @@
+/*
+*   7 kyu Reverse words
+*   https://www.codewars.com/kata/5259b20d6021e9e14c0010d4
+* */
+
+const reverseWords = str => {
+  const strArr = str.split(' ')
+  const strArrRev = strArr.map(ele => ele.split('').reverse().join(''));
+  const result = strArrRev.join(' ');
+  return result;
+}
