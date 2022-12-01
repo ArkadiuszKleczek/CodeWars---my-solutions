@@ -1,0 +1,6 @@
+/*
+*   7 kyu How many arguments
+*   https://www.codewars.com/kata/5c44b0b200ce187106452139/train/javascript
+* */
+
+const args_count = (...x) => x.length;
