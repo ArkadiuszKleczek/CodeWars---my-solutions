@@ -1,0 +1,15 @@
+/*
+*   7 kyu Find the stray number
+*   https://www.codewars.com/kata/57f609022f4d534f05000024
+* */
+
+const stray = numbers => {
+  for (let i = 0; i < numbers.length - 2; i++){
+  let first = numbers[i];
+  let second = numbers[i + 1];
+  let third = numbers[i + 2];
+  if (first !== second && first !== third) return first;
+  else if (second !== first && second !== third) return second;
+  else if (third !== first && third !== second) return third; 
+    }
+}
