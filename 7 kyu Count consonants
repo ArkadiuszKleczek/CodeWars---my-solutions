@@ -1,0 +1,20 @@
+/*
+*   7 kyu Count consonants
+*   https://www.codewars.com/kata/564e7fc20f0b53eb02000106
+* */
+
+const consonantCount = str =>  {
+  let counter = 0;
+  const letters = str.split('').filter(ele => ele !== ' ' && 
+    ele !== 'a'&& 
+    ele !== 'e'&& 
+    ele !== 'i'&& 
+    ele !== 'o' && 
+    ele !== 'u')
+    .map(ele => ele.toLowerCase());
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i].charCodeAt(0) > 96 && 
+        letters[i].charCodeAt(0) < 123) counter++;
+  }
+  return counter
+}
