@@ -1,0 +1,14 @@
+/*
+*   7 kyu Minimize Sum Of Array (Array Series #1)
+*   https://www.codewars.com/kata/5a523566b3bfa84c2e00010b
+* */
+
+const minSum =  arr => {
+  let sum = 0;
+  const sortedArr = arr.sort((a, b) => a - b);
+  for (let i = 0; i < sortedArr.length/2; i++){
+   sum += sortedArr[i] * sortedArr[sortedArr.length-(1+i)]
+  }
+  console.log(sum)
+  return sum;
+}
