@@ -1,0 +1,15 @@
+/*
+*   7 kyu The alphabet product
+*   https://www.codewars.com/kata/63b06ea0c9e1ce000f1e2407
+* */
+
+const alphabet =  ns => {
+  const sortedArr = ns.sort((a,b) => a - b);
+  let A = sortedArr[0];
+  let B = sortedArr[1];
+  let AxB = A * B == sortedArr[2] ? sortedArr[2] : sortedArr[3];
+  let C = A * B == sortedArr[2] ? sortedArr[3] : sortedArr[2];
+  let D = sortedArr[sortedArr.length-1] / C;
+  console.log(D)
+  return D;
+}
