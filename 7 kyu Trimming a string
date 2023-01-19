@@ -1,0 +1,14 @@
+/*
+*   7 kyu Trimming a string
+*   https://www.codewars.com/kata/563fb342f47611dae800003c
+* */
+
+
+const doTrim = (str, size) => `${str.slice(0, size)}...`
+
+const trim = (str, size) => {
+  const len = str.length;
+  if (size >= len) return str;
+  if (size < 3 && len <= 3) return doTrim(str, size);
+  return doTrim(str, size-3);
+};
