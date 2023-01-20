@@ -1,0 +1,12 @@
+/*
+*   7 kyu Number of People in the Bus
+*   https://www.codewars.com/kata/5648b12ce68d9daa6b000099
+* */
+
+const number = busStops => {
+  let counter = 0;
+  for (let i = 0; i < busStops.length; i++){
+    counter += busStops[i][0] - busStops[i][1]
+  }
+  return counter;
+}
