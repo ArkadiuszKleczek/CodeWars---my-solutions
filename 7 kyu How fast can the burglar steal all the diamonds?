@@ -1,0 +1,4 @@
+// Return how many turns the burglar needs to steal all the diamonds
+function diamondBurglar(locker) {
+  return locker.reduce( (rep, row) => rep + [...row.matchAll(/(\*{2})|(\*{1})/g)].length, 0 );
+}
