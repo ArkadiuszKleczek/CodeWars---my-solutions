@@ -1,4 +1,22 @@
+/*
+*   7 kyu How fast can the burglar steal all the diamonds?
+*   https://www.codewars.com/kata/63a15a3511e6e70023e7d0d3
+* */
+
 // Return how many turns the burglar needs to steal all the diamonds
-function diamondBurglar(locker) {
-  return locker.reduce( (rep, row) => rep + [...row.matchAll(/(\*{2})|(\*{1})/g)].length, 0 );
+const diamondBurglar =  locker => {
+  const pick =  locker.map(ele => ele.split(''));
+  const result = [];
+  console.log(pick);
+  for (let i = 0; i < locker.length; i++){
+    let counter = 0;
+    for (let j = 0; j < locker[i].length; j++){
+      let x = locker[i][j];
+      let y = locker[i][j + 1];
+      if (x == '*' ) counter++;
+      if (x == '*' && x == y ) j++;
+    }
+    result.push(counter);
+  }
+  return result.reduce((a, b) => a + b);
 }
