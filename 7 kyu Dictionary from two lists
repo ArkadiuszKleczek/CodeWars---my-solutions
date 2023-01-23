@@ -1,0 +1,15 @@
+/*
+*   7 kyu Dictionary from two lists
+*   https://www.codewars.com/kata/5533c2a50c4fea6832000101
+* */
+
+const createDict = (keys, values) => {
+  const obj = {};
+  let keysPair = keys.length - values.length > 0 ?  keys.length - values.length : 0;
+  while (keysPair > 0) {
+    values.push(null);
+    keysPair--
+  }
+  keys.forEach((ele, idx) => obj[ele] = values[idx]);
+  return obj;
+}
