@@ -1,4 +1,4 @@
- # My CodeWars account: https://www.codewars.com/users/ksedrik
+ # My CodeWars account: https://www.codewars.com/users/Arkadiusz%20K%C5%82eczek
 
 
 
