@@ -1,0 +1,13 @@
+/*
+*   7 kyu Cats and shelves
+*   https://www.codewars.com/kata/62c93765cef6f10030dfa92b
+* */
+
+const solution = (start, finish) => {
+  let posA = 1;
+  let posB = finish - start;
+  let jumps = Math.floor(posB / 3);
+  let gap = posB % 3;
+  if (start >= finish) return 0;
+  return gap == 0 ? jumps : gap == 1 ? jumps + 1 : jumps + 2;
+}
