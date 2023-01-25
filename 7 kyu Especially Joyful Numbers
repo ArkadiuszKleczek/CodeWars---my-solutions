@@ -1,0 +1,13 @@
+/*
+*   7 kyu Especially Joyful Numbers
+*   https://www.codewars.com/kata/570523c146edc287a50014b1
+* */
+
+function numberJoy(n) {
+    let harshadSum = n.toString().split('').map(Number).reduce((a,b) => a + b);
+    let harshadSumTest = n % harshadSum === 0;
+    let harshadSumReverse = harshadSum.toString().split('').map(Number).reverse().join('');
+    let harshadSumReverseTest = harshadSum * harshadSumReverse === n;
+  console.log(harshadSum, harshadSumTest, harshadSumReverse, harshadSumReverseTest)
+    return harshadSumTest && harshadSumReverseTest;
+}
