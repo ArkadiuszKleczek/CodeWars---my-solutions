@@ -1,0 +1,22 @@
+/*
+*   6 kyu Difference of perfect squares displayed as sum of consecutive odd numbers
+*   https://www.codewars.com/kata/6359b10f8f2001f29ccf0db4
+* */
+
+ function squaresToOdd(sqr1, sqr2){
+   let sqrSubstraction  = sqr1**2 - sqr2 **2;
+   let numbersOfConsecutiveOdds =  sqr1 - sqr2; 
+   let oddsArr = [] 
+   let counter = 1;
+   while (oddsArr.length < numbersOfConsecutiveOdds){
+     oddsArr.push(counter);
+     counter +=2
+   }
+   let oddsArrSum = oddsArr.reduce((a,b) => a + b); 
+   while (oddsArrSum < sqrSubstraction ){
+         oddsArr = oddsArr.map(ele => ele += 2);
+         oddsArrSum = oddsArr.reduce((a,b) => a + b)
+          }
+  let oddsArrStr = oddsArr = oddsArr.join(' + ');
+  return `${sqr1}^2 - ${sqr2}^2 = ${oddsArrStr} = ${sqrSubstraction}`
+}
