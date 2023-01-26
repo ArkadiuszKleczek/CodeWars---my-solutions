@@ -1,0 +1,13 @@
+/*
+*   6 kyu zipWith
+*   https://www.codewars.com/kata/5825792ada030e9601000782/train/javascript
+* */
+
+function zipWith(fn,a0,a1) {
+  const result = [];
+  let shorterArr = a0.length < a1.length ? a0 : a1; 
+  for (let i = 0; i < shorterArr.length; i++) {
+    result.push(fn(a0[i], a1[i]))
+  }
+  return result;
+}
