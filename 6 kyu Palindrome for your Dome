@@ -1,0 +1,23 @@
+/*
+*   6 kyu Palindrome for your Dome
+*   https://www.codewars.com/kata/53046ceefe87e4905e00072a
+* */
+
+const palindrome = str => {
+  if (str.length == 0) return true;
+  let strToLowerCase = str.toLowerCase();
+  const strArr = strToLowerCase.split('')
+  const LettersOnlyArr = [];
+  for (let i = 0; i < strToLowerCase.length; i++) {
+    if (strToLowerCase.charCodeAt(i) > 96 && strToLowerCase.charCodeAt(i) < 123 ) {
+       LettersOnlyArr.push(strArr[i]);
+    }
+    if (strToLowerCase.charCodeAt(i) > 47 && strToLowerCase.charCodeAt(i) < 58 ) {
+       LettersOnlyArr.push(strArr[i]);
+    }
+    
+  }
+  let strLettersOnly = LettersOnlyArr.join('');
+  let reversedStrLettersOnly = LettersOnlyArr.reverse().join('');
+  return strLettersOnly === reversedStrLettersOnly;
+}
