@@ -1,0 +1,14 @@
+/*
+*   6 kyu 1RM Calculator
+*   https://www.codewars.com/kata/595bbea8a930ac0b91000130
+* */
+
+const calculate1RM = (w, r) => {
+  if (r == 0) return 0;
+  if (r == 1) return w;
+  let epley = Math.round(w * (1 + (r / 30)));
+  let mcGlothin = Math.round((100 * w) / (101.3 -2.67123 * r));
+  let lombardi = Math.round(w * (r**0.10));
+  const result = [epley, mcGlothin, lombardi].sort((a,b) => a - b);
+  return result[2]; 
+}
