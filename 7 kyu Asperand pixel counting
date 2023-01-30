@@ -1,0 +1,11 @@
+/*
+*   7 kyu Asperand pixel counting
+*   https://www.codewars.com/kata/63d54b5d05992e0046752389
+* */
+
+function countPixels(k) {
+  if (k == 1) return 11;
+  if (k == 2) return 18;
+  let result = 18 + ((k-2) * 8);
+  return result;
+}
