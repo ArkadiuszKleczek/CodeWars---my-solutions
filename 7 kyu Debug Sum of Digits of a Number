@@ -1,0 +1,6 @@
+/*
+*   7 kyu Debug Sum of Digits of a Number
+*   https://www.codewars.com/kata/563d59dd8e47a5ed220000ba
+* */
+
+const getSumOfDigits = integer =>  integer.toString().split('').map(Number).reduce((a,b) => a + b);
