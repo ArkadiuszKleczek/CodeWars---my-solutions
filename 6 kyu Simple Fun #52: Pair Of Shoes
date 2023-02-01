@@ -1,0 +1,12 @@
+/*
+*   6 kyu Simple Fun #52: Pair Of Shoes
+*   https://www.codewars.com/kata/58885a7bf06a3d466e0000e3
+* */
+
+function pairOfShoes(shoes) {
+  const leftShoes = shoes.filter(ele => ele[0] === 0).sort((a, b) => a[1] - b[1]).map(ele => ele[1]);
+  const rightShoes = shoes.filter(ele => ele[0] === 1).sort((a, b) => a[1] - b[1]).map(ele => ele[1]);
+  if (leftShoes.length !== rightShoes.length) return false;
+  const filtered = leftShoes.filter(ele => rightShoes.indexOf(ele) === -1);
+	return filtered.length == 0;  
+}
