@@ -1,0 +1,15 @@
+/*
+*   6 kyu Hamming Distance
+*   https://www.codewars.com/kata/5410c0e6a0e736cf5b000e69
+* */
+
+const hamming = (a,b) => {
+  let longerStr = a.length > b.length ? a : b;
+  const aArr = a.split('');
+  const bArr = b.split('');
+  let counter = 0;
+	for (let i = 0; i <longerStr.length; i++) {
+    if (aArr[i] !== bArr[i]) counter++;
+  }
+  return counter;
+}
