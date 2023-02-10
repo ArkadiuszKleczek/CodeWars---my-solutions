@@ -1,0 +1,15 @@
+/*
+*   7 kyu Correct the time-string
+*   https://www.codewars.com/kata/57873ab5e55533a2890000c7
+* */
+
+const timeCorrect = time => {
+  if(timestring && timestring.match(/[0-9]{2}:[0-9]{2}:[0-9]{2}/g)){
+    let [hh,mm,ss] = timestring.split(':')
+    let date = new Date()
+    date.setHours(+hh,+mm,+ss)
+    return date.toLocaleTimeString('de-DE')
+  }else{
+    return timestring === '' ? '' : null
+  }
+}
