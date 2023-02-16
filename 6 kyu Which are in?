@@ -1,0 +1,19 @@
+/*
+*   6 kyu Which are in?
+*   https://www.codewars.com/kata/550554fd08b86f84fe000a58
+* */
+
+const inArray = (arr1, arr2) => {
+  let result = [];
+  for(let i = 0; i < arr2.length; i++){
+    for(let j = 0; j < arr2.length; j++){
+      if (arr2[j].includes(arr1[i]) == true) {
+        result.push(arr1[i]);
+        j++;
+        }
+      }
+    }
+  result.sort();
+  console.log(result);
+  return [...new Set(result)];
+}
