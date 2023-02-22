@@ -1,0 +1,9 @@
+/*
+*   8 kyu Be Concise I - The Ternary Operator
+*   https://www.codewars.com/kata/56f3f6a82010832b02000f38
+* */
+
+const describeAge = age =>{
+  let x="You're a(n) ";
+  return age<65?(age<18?(age<13?x+"kid":x+"teenager"):x+"adult"):x+"elderly"
+}
