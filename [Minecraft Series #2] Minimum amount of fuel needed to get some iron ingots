@@ -1,0 +1,14 @@
+/*
+*   [Minecraft Series #2] Minimum amount of fuel needed to get some iron ingots
+*   https://www.codewars.com/kata/583a02740b0a9fdf5900007c
+* */
+
+const calcFuel = n => {  
+  let ingotsTime = n * 11;
+  return { 
+     lava: Math.floor(ingotsTime / 800),
+     blazeRod: Math.floor(ingotsTime % 800 /120), 
+     coal: Math.floor(ingotsTime % 800 % 120 / 80), 
+     wood: Math.floor(ingotsTime % 800 % 120 % 80 / 15), 
+     stick: Math.floor(ingotsTime % 800 % 120 % 80 % 15 / 1)}
+};
