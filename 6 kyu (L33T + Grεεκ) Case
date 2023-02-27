@@ -1,0 +1,28 @@
+/*
+*   6 kyu (L33T + Grεεκ) Case
+*   https://www.codewars.com/kata/556025c8710009fc2d000011
+* */
+
+const GrεεκL33t = string =>{
+const str = string.toLowerCase().split('');
+  for (let i = 0; i < str.length; i++) {
+    if(str[i] == 'a') str[i] = 'α';
+    if(str[i] == 'b') str[i] = 'β';
+    if(str[i] == 'd') str[i] = 'δ';
+    if(str[i] == 'e') str[i] = 'ε';
+    if(str[i] == 'i') str[i] = 'ι';
+    if(str[i] == 'k') str[i] = 'κ';
+    if(str[i] == 'n') str[i] = 'η';
+    if(str[i] == 'o') str[i] = 'θ';
+    if(str[i] == 'p') str[i] = 'ρ';
+    if(str[i] == 'r') str[i] = 'π';
+    if(str[i] == 't') str[i] = 'τ';
+    if(str[i] == 'u') str[i] = 'μ';
+    if(str[i] == 'v') str[i] = 'υ';
+    if(str[i] == 'w') str[i] = 'ω';
+    if(str[i] == 'x') str[i] = 'χ';
+    if(str[i] == 'y') str[i] = 'γ';
+  }
+  console.log(str);
+  return str.join('')
+}
