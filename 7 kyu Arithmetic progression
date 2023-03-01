@@ -1,0 +1,14 @@
+/*
+*   7 kyu Arithmetic progression
+*   https://www.codewars.com/kata/55caf1fd8063ddfa8e000018
+* */
+
+const arithmeticSequenceElements = (a, d, n) => {
+  const result = [];
+  let value = a;
+	for (let i = 0; i < n ; i++){
+    result.push(value);
+    value += d;
+  }
+  return result.join(', ');
+}
