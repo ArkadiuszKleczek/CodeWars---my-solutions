@@ -1,0 +1,12 @@
+/*
+*   6 kyu Hanoi record
+*   https://www.codewars.com/kata/534eb5ad704a49dcfa000ba6
+* */
+
+const hanoi = disks =>{
+  let counter = 0;
+  for(let i = 0; i < disks; i++){
+    counter = (counter * 2) + 1;
+  }
+  return counter
+} 
