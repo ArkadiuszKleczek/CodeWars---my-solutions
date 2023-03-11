@@ -1,0 +1,13 @@
+/*
+*   7 kyu Keypad horror
+*   https://www.codewars.com/kata/5572392fee5b0180480001ae
+* */
+
+const computerToPhone = arr =>{
+  let numbersArr = arr.split('').map(Number);
+  for (let i = 0; i < arr.length; i++){
+    if (numbersArr[i] > 6) numbersArr[i] = numbersArr[i] - 6;
+    else if (numbersArr[i] < 4 && numbersArr[i] !== 0) numbersArr[i] = numbersArr[i] + 6;
+  }
+  return numbersArr.join('')
+}
