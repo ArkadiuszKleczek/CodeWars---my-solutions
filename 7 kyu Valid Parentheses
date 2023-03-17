@@ -1,0 +1,16 @@
+/*
+*   7 kyu Valid Parentheses
+*   https://www.codewars.com/kata/6411b91a5e71b915d237332d
+* */
+
+const validParentheses = parenStr => {
+  let parenArr = parenStr.split('');
+  let arrLength = Math.ceil(parenStr.length/2);
+  while (arrLength > 0){
+    for (let i=0; i<parenArr.length-1; i++){
+      if(parenArr[i] =='(' && parenArr[i+1] ==')') parenArr.splice(i,2)
+    }
+    arrLength--
+  }
+  return parenArr.length === 0;
+}
