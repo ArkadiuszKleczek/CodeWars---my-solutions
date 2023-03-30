@@ -1,0 +1,15 @@
+/*
+*   7 kyu Insert dashes
+*   https://www.codewars.com/kata/55960bbb182094bc4800007b/train/javascript
+* */
+
+const insertDash =  num => {
+  const numArr = num.toString().split('').map(Number);
+  const result = [];
+  for (let i = 0; i < numArr.length-1; i++){
+    result.push(numArr[i]);
+    if(numArr[i] % 2 !== 0 && numArr[i+1] % 2 !== 0)  result.push('-')
+  }
+  result.push(numArr[numArr.length-1])
+  return result.join('')
+}
