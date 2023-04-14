@@ -1,0 +1,16 @@
+/*
+*   6 kyu All Star Code Challenge #15
+*   https://www.codewars.com/kata/586560a639c5ab3a260000f3
+* */
+
+const rotate = str => {
+  let currentStr = str;
+  let result = []
+  for (let i = 0; i < str.length; i++) {
+    let firstLetter = currentStr[0];
+    let newWord = currentStr.substring(1) + firstLetter
+    result.push(newWord);
+    currentStr = newWord;
+    }
+  return result;
+}
