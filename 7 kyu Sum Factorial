@@ -1,0 +1,17 @@
+/*
+*   7 kyu Sum Factorial
+*   https://www.codewars.com/kata/56b0f6243196b9d42d000034
+* */
+
+const Factorial = number => {  
+let fact = 1;
+    for (let i = 1; i <= number; i++) {
+        fact *= i;
+    }
+  return fact;
+}
+
+const sumFactorial = arr => {
+  const arrFact = arr.map(ele => Factorial(ele))
+  return arrFact.reduce((a,b) => a + b);
+}
