@@ -1,0 +1,14 @@
+/*
+*   7 kyu Running out of space
+*   https://www.codewars.com/kata/56576f82ab83ee8268000059
+* */
+
+const spacey = array => {
+ const result = [];
+ let current = '';
+ for (let i = 0; i < array.length; i++){
+   current = current + array[i];
+   result.push(current);
+ }
+  return result;
+}
