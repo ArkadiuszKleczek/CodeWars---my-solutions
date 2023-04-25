@@ -1,0 +1,11 @@
+/*
+*   7 kyu The Office I - Outed
+*   https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1
+* */
+
+function outed(meet, boss){
+  const meetArr = Object.values(meet);
+  const bossIndex =  Object.keys(meet).indexOf(boss);
+  const meetScore =  (Object.values(meet).reduce((a, b) => a + b) + meetArr[bossIndex]) / meetArr.length;
+  return meetScore > 5 ? 'Nice Work Champ!' :  'Get Out Now!';
+}
