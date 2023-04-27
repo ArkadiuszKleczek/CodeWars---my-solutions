@@ -1,0 +1,19 @@
+/*
+*   7 kyu Max sum between two negatives
+*   https://www.codewars.com/kata/6066ae080168ff0032c4107a
+* */
+
+const maxSumBetweenTwoNegatives = arr => {
+ let result = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] >= 0) continue;
+    for(let j = i + 1; j < arr.length; j++) {
+      if(arr[j] < 0){
+        result.push(arr.slice(i + 1, j));
+        i = j;
+      }
+    }
+  }
+  
+  return result.length > 0 ? Math.max(...result.map(e => e.reduce((a,b) => a + b, 0)), 0) : -1;
+}
