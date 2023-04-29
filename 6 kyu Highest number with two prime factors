@@ -1,0 +1,41 @@
+/*
+*   6 kyu Highest number with two prime factors
+*   https://www.codewars.com/kata/55f347cfb44b879e1e00000d
+* */
+
+const highestBiPrimeFac = (p1, p2, n) => {
+  const result = [];
+  let x = 1;
+  let y = 1;
+  let b = 0;
+  let resultP2= p1**1 * p2**x
+  let resultP1P2 = p1**x * p2**y
+  while (b <= n) {
+    let resultP1 = p1**x * p2**y;
+    resultP1 <= n ? result.push([resultP1, x, y]) : n;
+    b = resultP1;
+    x++;
+  }  
+  x = 1;
+  y = 1;
+  b = 0;
+  while (b <= n) {
+    let resultP2 = p1**x * p2**y;
+    resultP2 <= n ? result.push([resultP2, x, y]) : n;
+    b = resultP2;
+    y++;
+  }
+  x = 1;
+  y = 1;
+  b = 0;
+  let counter = 1;
+  while (b <= n) {
+    let resultP1P2 = p1**x * p2**y;
+    resultP1P2 <= n ? result.push([resultP1P2, x, y]) : n;
+    b = resultP1P2;
+    counter % 2 !== 0?  x++ : y++;
+    counter++;
+  }
+  let finalResoult = result.sort((a, b) => a[0] - b[0]);
+  return finalResoult[finalResoult.length-1]
+}
