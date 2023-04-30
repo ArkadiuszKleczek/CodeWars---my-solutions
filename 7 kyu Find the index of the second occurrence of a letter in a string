@@ -1,0 +1,17 @@
+/*
+*   7 kyu Find the index of the second occurrence of a letter in a string
+*   https://www.codewars.com/kata/63f96036b15a210058300ca9
+* */
+
+const secondSymbol = (str, symbol) => {
+  console.log(str, symbol);
+  let symbolAscii = symbol.charCodeAt();
+  const strArrAscii = str.split('').map(ele => ele.charCodeAt());
+  if ((strArrAscii.indexOf(symbolAscii) !== strArrAscii.lastIndexOf(symbolAscii))) 
+    {
+     strArrAscii[strArrAscii.indexOf(symbolAscii)] = '=';
+     return strArrAscii.indexOf(symbolAscii);
+    }
+  else if (strArrAscii.indexOf(symbolAscii) === -1) return -1;
+  else return -1;
+}
