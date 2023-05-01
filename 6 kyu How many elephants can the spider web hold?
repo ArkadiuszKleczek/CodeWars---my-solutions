@@ -1,0 +1,26 @@
+/*
+*   6 kyu How many elephants can the spider web hold?
+*   https://www.codewars.com/kata/5830e55fa317216de000001b
+* */
+
+const breakTheWeb = (strength, width) => 
+{
+  let maxWeight = (strength - (strength % 1000)) / 1000;
+  let currentWeight = 0;
+  let currentElephantWeight = 1;
+  let currentWidth = width;
+  let level = 0;
+  let counter = 0;
+  while (currentWeight + currentElephantWeight <= maxWeight && currentWidth > 0){
+    counter++;
+    currentWidth--;
+    currentWeight += currentElephantWeight;
+    if (currentWidth == 0) {
+      level++;
+      currentWidth = width - level;
+      currentElephantWeight++;           
+    }   
+  }
+  console.log(maxWeight, width, '||', currentWeight, counter);
+  return counter;
+}
