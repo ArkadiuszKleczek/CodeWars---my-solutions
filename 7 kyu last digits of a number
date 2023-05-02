@@ -1,0 +1,9 @@
+/*
+*   7 kyu last digits of a number
+*   https://www.codewars.com/kata/5cd5ba1ce4471a00256930c0
+* */
+
+const lastDigit = (n, d) => {
+  let x = n.toString().split('').map(Number);
+  return d > 0 ? x.slice(-d) : [];
+} 
