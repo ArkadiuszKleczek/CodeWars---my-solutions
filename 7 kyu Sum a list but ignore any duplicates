@@ -1,0 +1,16 @@
+/*
+*   7 kyu Sum a list but ignore any duplicates
+*   https://www.codewars.com/kata/5993fb6c4f5d9f770c0000f2
+* */
+
+const sumNoDuplicates = a =>{
+  if (a.length == 0 ) return 0;
+  let x =  a.filter(function(item) {
+  return a.lastIndexOf(item) == a.indexOf(item);
+});
+ 
+  let result =  x.reduce((a,b) => a + b, 0);
+   console.log(x, result);
+    
+  return result;
+} 
