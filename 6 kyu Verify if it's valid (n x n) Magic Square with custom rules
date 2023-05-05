@@ -1,0 +1,39 @@
+/*
+*   6 kyu Verify if it's valid (n x n) Magic Square with custom rules
+*   https://www.codewars.com/kata/633d7409c8bd7c4a853c2ba9
+* */
+
+const isValid = (sqr, gap) => {
+  const square = sqr.map(ele => [...new Set(ele)]);
+  const check = square[0].reduce((pv,cv) => pv + cv)
+  const flatArray = square.flat().sort((a,b) => a - b).sort((a,b) => a - b);  
+  const arrSumedHorizon = square.map(ele => ele.reduce((a,b) => a + b));
+  if (arrSumedHorizon[0] !== arrSumedHorizon[1] && arrSumedHorizon[1] !== arrSumedHorizon[2]) return false;
+  const verticalArrSum = [];
+  const diagonalArrOne = [];
+  const diagonalArrTwo = []; 
+  for(let i = 0; i < square.length; i++){
+    diagonalArrOne.push(square[i][i]);
+    diagonalArrTwo.push(square[i][(square.length-1) - i]);
+     for(let j = 0; j < square[i].length; j++){
+    verticalArrSum.push(square[i][j]);
+    }
+  }
+  const diagonalArrOneSum = diagonalArrOne.reduce((a,b) => a + b);
+  const diagonalArrTwoSum = diagonalArrTwo.reduce((a,b) => a + b);
+  if (diagonalArrOneSum !== check) return false;
+  if(flatArray.length < 9 ) return false;
+  const gapArray = [];
+  let x = flatArray[0];
+  for(let i = 0; i < flatArray.length; i++){ 
+    gapArray.push(x);
+    x += gap
+  }
+ 
+  let y = flatArray.filter(ele => !gapArray.includes(ele)); 
+  console.log( gap, square, '||', flatArray, "GAP:", gapArray);
+  console.log(arrSumedHorizon, verticalArrSum, y);
+  console.log( 'diagonal: ', diagonalArrOneSum, diagonalArrTwoSum, check)
+  if(y.length !== 0 ) return false;
+    return true;
+}
