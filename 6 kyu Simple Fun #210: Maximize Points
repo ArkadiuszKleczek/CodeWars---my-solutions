@@ -1,0 +1,19 @@
+/*
+*   6 kyu Simple Fun #210: Maximize Points
+*   https://www.codewars.com/kata/58fec262184b6dc30800000d
+* */
+
+function maximizePoints(team1, team2) {
+  const team1Sorted = team1.sort((a,b) => b - a);
+  const team2Sorted = team2.sort((a,b) => b - a);
+  let counter = 0;
+  let counterMax = 0;
+  for (let i = 0; i < team1.length; i++){ 
+    team1Sorted.map((ele, idx) => ele > team2Sorted[idx] ? counter++ : ele);
+    counter > counterMax ? counterMax = counter : counter;
+    counter = 0;
+    team1Sorted.unshift(team1Sorted[team1Sorted.length-1]);
+    team1Sorted.pop();
+  }
+  return counterMax;
+}
