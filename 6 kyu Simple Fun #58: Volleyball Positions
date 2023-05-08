@@ -1,0 +1,21 @@
+/*
+*   6 kyu Simple Fun #58: Volleyball Positions
+*   https://www.codewars.com/kata/5889f08eb71a7dcee600006c
+* */
+
+const volleyballPositions = (f, k) => {
+  const swap = k % 6;
+  const playersPosition = [f[1][0], f[3][0], f[2][1], f[3][2], f[1][2], f[0][1]];
+  let playersCurrentPosition = playersPosition;
+  for(let i = 0; i < swap; i++){
+    playersCurrentPosition.unshift(playersCurrentPosition[playersCurrentPosition.length-1]);
+    playersCurrentPosition.pop();
+  }
+  const result = [
+  [ 'empty', playersCurrentPosition[5], 'empty' ],
+  [ playersCurrentPosition[0], 'empty', playersCurrentPosition[4] ],
+  [ 'empty', playersCurrentPosition[2], 'empty' ],
+  [ playersCurrentPosition[1], 'empty', playersCurrentPosition[3] ] 
+  ]; 
+  return result;
+}
