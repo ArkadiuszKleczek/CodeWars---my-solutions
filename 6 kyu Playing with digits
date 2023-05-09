@@ -1,0 +1,15 @@
+/*
+*   6 kyu Playing with digits
+*   https://www.codewars.com/kata/5552101f47fc5178b1000050
+* */
+
+const digPow = (n, p) =>{
+  let result = 0;
+  let pow = p;
+  const nArr = n.toString().split('').map(Number);
+  for(let i = 0; i < nArr.length; i++){
+    result += nArr[i]**pow;
+    pow++;
+  }
+  return Number.isInteger(result / n) ? result / n : -1;
+}
