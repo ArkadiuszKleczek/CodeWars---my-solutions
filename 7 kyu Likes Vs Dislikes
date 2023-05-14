@@ -1,0 +1,14 @@
+/*
+*   7 kyu Likes Vs Dislikes
+*   https://www.codewars.com/kata/62ad72443809a4006998218a
+* */
+
+const likeOrDislike = buttons => {
+  let result = buttons.length > 0 ? buttons[0] : 'Nothing';
+  for (let i = 1; i < buttons.length; i++){
+    let current = buttons[i];
+    if(current != result) result = current;
+    else { result = 'Nothing'};
+  }
+  return result;
+}
