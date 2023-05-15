@@ -1,0 +1,12 @@
+/*
+*   7 kyu Length and two values.
+*   https://www.codewars.com/kata/62a611067274990047f431a8
+* */
+
+const alternate = (n, firstValue, secondValue) =>{
+  const result = [];
+  for(let i = 0; i < n; i++){
+    i % 2 == 0 ? result.push(firstValue) :result.push(secondValue); 
+  }
+  return result;
+}
