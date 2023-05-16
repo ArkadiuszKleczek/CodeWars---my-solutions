@@ -1,0 +1,21 @@
+/*
+*   6 kyu Reverse Vowels In A String
+*   https://www.codewars.com/kata/585db3e8eec141ce9a00008f
+* */
+
+const reverseVowels = str => {
+  const strArr = str.split('');
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  const ArrVowels = [];
+  for(let i = 0; i < str.length; i++){
+    if(vowels.includes(strArr[i])) ArrVowels.push(strArr[i]);
+  }
+  const strArrReverse = strArr.reverse();
+   for(let i = 0, j = 0; i < str.length; i++){
+    if(vowels.includes(strArr[i])) {
+      strArr[i] = ArrVowels[j];
+      j++;
+    } 
+  }
+  return strArrReverse.reverse().join('')
+}
