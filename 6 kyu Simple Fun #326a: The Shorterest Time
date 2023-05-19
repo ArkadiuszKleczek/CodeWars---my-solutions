@@ -1,0 +1,15 @@
+/*
+*   6 kyu Simple Fun #326a: The Shorterest Time
+*   https://www.codewars.com/kata/5953c6f8af7ac14fd4000021
+* */
+
+function shorterestTime(n,m,speeds) {
+  if (n===0) return 0;
+  const useStairs = speeds[3]*n;
+  const flourDiff = Math.abs(n-m);
+  const elveatorTime = speeds[1] + speeds[2]; 
+  const waitForElevator = flourDiff*speeds[0] + elveatorTime + speeds[0] * n + speeds[1];
+  const goForElevator = flourDiff*speeds[3] + elveatorTime + speeds[0] * m + speeds[1];
+  const elevatorTime = waitForElevator < goForElevator ? waitForElevator : goForElevator;
+  return elevatorTime < useStairs ? elevatorTime : useStairs;
+}
