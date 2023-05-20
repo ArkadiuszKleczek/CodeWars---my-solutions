@@ -1,0 +1,10 @@
+/*
+*   7 kyu Most Likely
+*   https://www.codewars.com/kata/56644a421b7c94c622000056
+* */
+
+const mostLikely = (p1, p2) => {
+  const p1Arr = p1.split(':').map(Number);
+  const p2Arr = p2.split(':').map(Number);
+  return (p1Arr[0] / p1Arr[1]) > (p2Arr[0] / p2Arr[1]) 
+}
