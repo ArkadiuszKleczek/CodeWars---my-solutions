@@ -1,0 +1,6 @@
+/*
+*   8 kyu Calculate average
+*   https://www.codewars.com/kata/57a2013acf1fa5bfc4000921
+* */
+
+const findAverage = arr => arr.length > 0 ? arr.reduce((a,b)=>a+b,0)/arr.length : 0;
