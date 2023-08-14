@@ -1,0 +1,17 @@
+/*
+*   7 kyu Last man standing
+*   https://www.codewars.com/kata/567c26df18e9b1083a000049
+* */
+
+const lastManStanding = n => {
+  const arr = [];
+  for(let i = 1; i <= n; i++){
+    arr.push(i);
+  }
+  let x = arr.filter((ele, idx) => idx % 2 !== 0);
+  while (x.length > 1 ){
+   x.reverse();
+   x = x.filter((ele, idx) => idx % 2 !== 0);
+}
+  return x[0];
+}
