@@ -1,0 +1,14 @@
+/*
+*   7 kyu Log without dates
+*   https://www.codewars.com/kata/64cac86333ab6a14f70c6fb6
+* */
+
+const checkLogs = log => {
+  if(log.length === 0) return 0;
+ const logArr = log.map(ele => ele.split(':').join('') * 1);
+  let counter = 1;
+  for(let i = 0; i < logArr.length-1; i++){
+    if(logArr[i+1] <= logArr[i]) counter++
+  }
+  return counter;
+}
