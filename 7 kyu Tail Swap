@@ -1,0 +1,14 @@
+/*
+*   7 kyu Tail Swap
+*   https://www.codewars.com/kata/5868812b15f0057e05000001
+* */
+
+const tailSwap = arr => {
+  const arrSwapped = arr.map(ele => ele.split(':'));
+  let x = arrSwapped[0].splice(1,1);
+  arrSwapped[1].push(x);
+  let y = arrSwapped[1].splice(1,1);
+  arrSwapped[0].push(y);
+  const result = arrSwapped.map(ele => ele.join(':'));
+  return result;
+}
