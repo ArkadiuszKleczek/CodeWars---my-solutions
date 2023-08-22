@@ -1,0 +1,13 @@
+/*
+*   7 kyu Simple Fun #223: Parameter Of Number
+*   https://www.codewars.com/kata/5902f1839b8e720287000028
+* */
+
+const parameter = (n) => {
+  let nSum = n.toString().split('').map(Number).reduce((a,b) => a + b);
+  let nProduct = n.toString().split('').map(Number).reduce((a,b) => a * b);
+  const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+  const lcm = (nSum * nProduct) / gcd(nSum, nProduct);
+    
+  return lcm; 
+}
