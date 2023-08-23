@@ -1,0 +1,22 @@
+/*
+*   7 kyu Is n divisible by (...)?
+*   https://www.codewars.com/kata/558ee8415872565824000007
+* */
+
+const isDivisible = (...x) => {
+  const n = x[0]; 
+  const dividers = x.slice(1, x.length)
+  for (let i = 0; i < dividers.length; i++){
+    if (n % dividers[i] !== 0) return false
+  }
+  return true;
+}
+
+// better solution:
+
+const isDivisible = (n, ...dividers) => {
+  for (let i = 0; i < dividers.length; i++){
+    if (n % dividers[i] !== 0) return false
+  }
+  return true;
+}
