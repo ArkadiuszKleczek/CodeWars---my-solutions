@@ -1,0 +1,13 @@
+/*
+*   7 kyu  rice and chessboard problem
+*   https://www.codewars.com/kata/5b0d67c1cb35dfa10b0022c7
+* */
+
+const squaresNeeded = grains => {
+  if(grains <= 2) return grains;
+  let counter = 0;
+    while(2**counter <= grains){
+      counter++;
+    }
+    return counter;
+  } 
