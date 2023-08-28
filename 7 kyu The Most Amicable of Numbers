@@ -1,0 +1,13 @@
+/*
+*   7 kyu The Most Amicable of Numbers
+*   https://www.codewars.com/kata/56b5ebaa26fd54188b000018
+* */
+
+const amicableNumbers = (num1, num2) => {
+  const divisorsArr = [];
+  for (let i = 1; i <num1; i++){
+    if(num1 % i === 0) divisorsArr.push(i);
+  }
+  const divisorsArrSum = divisorsArr.reduce((a,b) => a+b);
+  return divisorsArrSum === num2;
+}
