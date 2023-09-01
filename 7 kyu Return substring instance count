@@ -1,0 +1,10 @@
+/*
+*   7 kyu Return substring instance count
+*   https://www.codewars.com/kata/5168b125faced29f66000005
+* */
+
+const solution = (fullText, searchText) =>{
+  if (searchText.length < 1) return 0;
+  const fullTextArr = fullText.split(searchText).join('').split(''); 
+  return (fullText.length - fullTextArr.length) / searchText.length; 
+}
