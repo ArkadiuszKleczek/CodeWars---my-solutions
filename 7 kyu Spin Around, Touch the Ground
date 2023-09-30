@@ -1,0 +1,12 @@
+/*
+*   7 kyu Spin Around, Touch the Ground
+*   https://www.codewars.com/kata/65127141a5de2b1dcb40927e
+* */
+
+function spinAround(turns) {
+  if(turns.length === 0) return 0;
+  const turnsCount = turns.map(ele => ele === 'right' ? 0.25 : -0.25);
+  const turnsSum = turnsCount.reduce((a, b) => a + b, 0);
+  const turnsSumRounded = Math.trunc(turnsSum);
+  return Math.abs(turnsSumRounded);
+}
