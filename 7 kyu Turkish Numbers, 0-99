@@ -1,0 +1,16 @@
+/*
+*   7 kyu Turkish Numbers, 0-99
+*   https://www.codewars.com/kata/5ebd53ea50d0680031190b96
+* */
+
+const getTurkishNumber = (num) => {
+  if (num === 10) return "on";
+  const tens = Math.floor(num / 10);
+  const units = num - (tens * 10);
+  const tensArr = ['on', 'yirmi', 'otuz', 'kırk', 'elli', 'altmış', 'yetmiş', 'seksen', 'doksan'];
+  const unitsArr = ['sıfır', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz'];
+  const numArr = num.toString().split('');
+  if (num > 9 && numArr[1] == 0) return tensArr[tens-1];
+  else if (num > 9) return tensArr[tens-1] + ' ' + unitsArr[units];
+  else return unitsArr[units];
+}
