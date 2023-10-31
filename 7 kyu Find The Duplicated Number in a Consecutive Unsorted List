@@ -1,0 +1,14 @@
+/*
+*   7 kyu Find The Duplicated Number in a Consecutive Unsorted List
+*   https://www.codewars.com/kata/558dd9a1b3f79dc88e000001
+* */
+
+const findDup = arr => {
+  const arrSorted = arr.sort();
+  let duplicateValue = 0;  
+  for (let i = 0; i < arrSorted.length; i++){
+    if(arrSorted[i] == arrSorted[i+1])  duplicateValue = arrSorted[i];
+}  
+
+  return duplicateValue;
+}
