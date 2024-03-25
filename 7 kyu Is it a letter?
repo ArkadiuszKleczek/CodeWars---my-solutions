@@ -1,0 +1,12 @@
+/*
+*   7 kyu Is it a letter?
+*   https://www.codewars.com/kata/57a06b07cf1fa58b2b000252
+* */
+
+const isItLetter = char =>{
+  console.log(char);
+  let charToAscii = char.charCodeAt(0);
+  if (charToAscii > 64 && charToAscii < 91) return true;
+  else if (charToAscii > 96 && charToAscii < 123) return true;
+  else return false
+}  
