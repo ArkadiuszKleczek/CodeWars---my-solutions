@@ -1,0 +1,13 @@
+/*
+*   7 kyu Find the divisors!
+*   https://www.codewars.com/kata/544aed4c4a30184e960010f4
+* */
+
+const divisors = int => {
+  let result = [];
+  for (let i = 2; i <= int/2; i++) {
+    if (int % i === 0) result.push(i)
+  }
+  if (result.length == 0) return int + ' is prime'
+  return result
+};
