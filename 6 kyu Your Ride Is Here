@@ -1,0 +1,14 @@
+/*
+*   6 kyu Your Ride Is Here
+*   https://www.codewars.com/kata/55491e9e50f2fc92f3000074
+* */
+
+
+const ride = (group,comet) =>{
+  let result = "STAY";
+  const groupMod = group.toUpperCase().split("").map(ele => ele.charCodeAt() -64).reduce((a,b) => a*b);
+  const cometMod = comet.toUpperCase().split("").map(ele => ele.charCodeAt() -64).reduce((a,b) => a*b);
+  if (groupMod % 47 === cometMod % 47) result = "GO"
+
+ return result
+}
