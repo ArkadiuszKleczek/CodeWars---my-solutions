@@ -1,0 +1,20 @@
+/*
+*   6 kyu Grouped by commas
+*   https://www.codewars.com/kata/5274e122fc75c0943d000148
+* */
+
+const groupByCommas = number => {
+  if(number < 1000) return number.toString();
+  const result = [];
+  const numberStr = number.toString();
+  let counter = numberStr.length % 3  === 0? 0 : 3 - numberStr.length % 3; 
+  for(let i = 0; i < numberStr.length; i++){
+    if(counter === 3) {
+       result.push(',');
+       counter = 0;   }
+  result.push(numberStr[i])
+  counter++;
+  }
+ return result.join('');
+
+} 
