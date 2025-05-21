@@ -1,0 +1,6 @@
+/*
+*   7 kyu The old switcheroo 2
+*   https://www.codewars.com/kata/55d6a0e4ededb894be000005
+* */
+
+const encode = str => str.toLowerCase().split('').map(ele => (((ele.charCodeAt() - 96) > 0) && ((ele.charCodeAt() - 96) < 27) ? (ele.charCodeAt() - 96) : ele )).join('');
