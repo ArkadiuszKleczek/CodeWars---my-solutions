@@ -1,0 +1,15 @@
+/*
+*   7 kyu Even odd disparity
+*   https://www.codewars.com/kata/59c62f1bdcc40560a2000060
+* */
+
+const solve =  a =>{
+  let NumbersOnlyArray = a.filter(ele => typeof ele === 'number')
+  let evenNumbers = 0; 
+  let oddNumbers = 0;  
+  for (let i=0; i<NumbersOnlyArray.length; i++){
+    NumbersOnlyArray[i] % 2 === 0 ? evenNumbers++ : oddNumbers++;
+   } 
+  console.log(NumbersOnlyArray, '|>', evenNumbers, oddNumbers) 
+  return evenNumbers - oddNumbers;
+};
