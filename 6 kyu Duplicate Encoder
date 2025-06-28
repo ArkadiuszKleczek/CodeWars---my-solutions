@@ -1,0 +1,37 @@
+/*
+*   6 kyu Duplicate Encoder
+*   https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
+* */
+
+const duplicateEncode  = word =>{
+    const result = [];
+    const wordSplitedArr = word.split('').map(ele => ele.toLowerCase());
+    let curretLetterHolder = 0;
+
+    for(let i = 0; i < word.length; i++){
+      curretLetterHolder = 0;  
+      console.log(`..${i}..`)
+      for(let j = 0; j < word.length; j++){
+         if(i === j) j++;
+         console.log(i,j, curretLetterHolder)
+         if(wordSplitedArr[i] == wordSplitedArr[j] ) curretLetterHolder++
+         }
+      if(curretLetterHolder > 0) result.push(`)`);
+      else result.push(`(`);
+       }
+
+    console.log(wordSplitedArr, result)
+    return result.join('');
+
+}
+
+// Interesting solution:
+function duplicateEncode(word){
+  return word
+    .toLowerCase()
+    .split('')
+    .map( function (a, i, w) {
+      return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+    })
+    .join('');
+}
