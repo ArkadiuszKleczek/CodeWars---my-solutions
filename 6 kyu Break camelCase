@@ -1,0 +1,33 @@
+/*
+*   6 kyu Break camelCase
+*   https://www.codewars.com/kata/5208f99aee097e6552000148
+* */
+
+onst solution  = str => {
+  const strSplitByWords = str.split(' ');
+  let result = [];
+  
+  const arrOfSplitedWord = strSplitByWords.map(ele => ele.split(''));
+  for(let i = 0; i < strSplitByWords.length; i++){
+    for(let j = 0; j < arrOfSplitedWord[i].length; j++){
+      if(arrOfSplitedWord[i][j].charCodeAt() > 64 && arrOfSplitedWord[i][j].charCodeAt() < 91 ) {
+          arrOfSplitedWord[i].splice(j, 0, ' ') ;
+          j++;
+        }
+      }
+     result.push(arrOfSplitedWord[i].join(''))
+    }
+  console.log(strSplitByWords,result);
+  return result.join('');
+}
+
+Clever solution: 
+function solution(string) {
+  string = string.split('').map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = ' ' + el
+    }
+    return el
+  })
+  return string.join('')
+}
