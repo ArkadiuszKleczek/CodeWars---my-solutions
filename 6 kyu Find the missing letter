@@ -1,0 +1,17 @@
+/*
+*   6 kyu Find the missing letter
+*   https://www.codewars.com/kata/5839edaa6754d6fec10000a2
+* */
+
+const findMissingLetter = arr => {
+  let result;
+  const arrToAscii = arr.map(ele => ele.charCodeAt());
+  for(let i = 0; i < arr.length - 1; i++) {
+    if (arrToAscii[i] + 1 !== arrToAscii[i + 1]) {
+      result =  String.fromCharCode(arrToAscii[i] + 1);
+      i++;
+    }   
+  }
+  console.log(arr, arrToAscii)
+  return result;
+}
