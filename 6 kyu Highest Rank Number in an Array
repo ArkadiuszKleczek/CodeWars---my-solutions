@@ -1,0 +1,24 @@
+/*
+*   6 kyu Highest Rank Number in an Array
+*   https://www.codewars.com/kata/5420fc9bb5b2c7fd57000004
+* */
+
+const highestRank = arr =>{
+ let recurringNumbers = arr.filter(num => arr.indexOf(num) !== arr.lastIndexOf(num)).sort((a, b) => a - b).reverse();
+ if (recurringNumbers.length == 0) return arr[arr.length - 1]
+ let counter = 0;
+ let currentNumberCounter = 0;
+ let currentHighestNumber;
+ for(let i = 0; i < recurringNumbers.length; i++){
+   for(let j = i + 1; j < recurringNumbers.length; j++){
+     if(recurringNumbers[i] === recurringNumbers[j]) counter++;
+   }
+   if (counter > currentNumberCounter) {
+     currentHighestNumber = recurringNumbers[i];
+     currentNumberCounter = counter;
+   }
+   i += counter;
+   counter = 0;
+ }
+  return currentHighestNumber;
+}
